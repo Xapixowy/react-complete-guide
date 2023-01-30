@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './ExpensesList.css';
 
-import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
-import ExpensesFilter from '../ExpensesFilter/ExpensesFilter';
 
 const ExpensesList = (props) => {
-   const [expenses, setExpenses] = useState(props.expenses);
+   let filteredExpenses;
+   if (props.items.length) {
+      filteredExpenses = props.items.map((item) => (
+         <ExpenseItem key={item.id} date={item.date} title={item.title} price={item.amount}></ExpenseItem>
+      ));
+   } else {
+      filteredExpenses = <p className="expenses-list__no-expenses">No expenses found!</p>;
+   }
 
-   const filterChangeHandler = (filter) => {
-      setExpenses(props.expenses.filter((item) => item.date.getFullYear() === parseInt(filter)));
-   };
-
-   return (
-      <div>
-         <ExpensesFilter onFilterChange={filterChangeHandler} />
-         <Card className="expenses-list">
-            {expenses.map((item) => (
-               <ExpenseItem key={item.id} date={item.date} title={item.title} price={item.amount}></ExpenseItem>
-            ))}
-         </Card>
-      </div>
-   );
+   return <ul className="expenses-list">{filteredExpenses}</ul>;
 };
 
 export default ExpensesList;

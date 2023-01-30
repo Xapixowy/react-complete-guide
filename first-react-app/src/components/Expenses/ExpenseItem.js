@@ -11,7 +11,6 @@ const ExpenseItem = (props) => {
 
    const clickHandler = () => {
       setTitle(title + '🐓');
-      console.log(`${title} -> ${price}`);
    };
 
    return (
@@ -23,7 +22,9 @@ const ExpenseItem = (props) => {
             <h2>{title}</h2>
             <div className="expense-item__price">${price}</div>
          </div>
-         <button onClick={clickHandler}>Add 🐓</button>
+         <button onClick={clickHandler} className="expense-item__button">
+            Add 🐓
+         </button>
       </Card>
    );
 };

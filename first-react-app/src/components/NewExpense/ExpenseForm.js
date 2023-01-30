@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
-   const [enteredTitle, setEnteredTitle] = useState('');
-   const [enteredAmount, setEnteredAmount] = useState(0);
+   const [enteredTitle, setEnteredTitle] = useState(`Test ${Math.floor(Math.random() * 100) + 1}`);
+   const [enteredAmount, setEnteredAmount] = useState((Math.random() * 100).toFixed(2));
    const [enteredDate, setEnteredDate] = useState('2022-12-31');
 
    // const [userInput, setUserInput] = useState({
@@ -52,7 +52,7 @@ const ExpenseForm = (props) => {
 
       const expenseData = {
          title: enteredTitle,
-         amount: enteredAmount,
+         amount: +enteredAmount,
          date: new Date(enteredDate),
       };
 
@@ -86,7 +86,10 @@ const ExpenseForm = (props) => {
             </div>
          </div>
          <div className="new-expense__actions">
-            <button>Add expense</button>
+            <button type="button" onClick={props.onCloseBtnClick}>
+               Close
+            </button>
+            <button type="submit">Add expense</button>
          </div>
       </form>
    );

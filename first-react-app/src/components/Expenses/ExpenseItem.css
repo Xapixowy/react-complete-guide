@@ -34,6 +34,21 @@
    padding: 0.5rem;
    border-radius: 12px;
 }
+.expense-item__button {
+   margin-left: 10px;
+   font-size: 1rem;
+   font-weight: bold;
+   color: white;
+   background-color: #654c31;
+   border: 1px solid white;
+   padding: 0.5rem;
+   border-radius: 12px;
+   transition: 0.1s background-color;
+}
+
+.expense-item__button:hover {
+   background-color: #8b6843;
+}
 
 @media (min-width: 580px) {
    .expense-item__description {
