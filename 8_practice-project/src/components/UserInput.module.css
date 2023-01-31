@@ -1,0 +1,52 @@
+.user-input {
+   width: 600px;
+   padding: 15px;
+   margin: 0 auto;
+   color: #000;
+   background-color: #fff;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.user-input__form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.user-input__input {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.user-input__input label {
+   font-weight: bold;
+}
+
+.user-input__input input {
+   padding: 5px;
+}
+
+.user-input__input input:focus {
+   outline-color: #663399;
+}
+
+.user-input__controls {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+.user-input__controls button {
+   color: #fff;
+   background-color: #663399;
+   border: none;
+   border-radius: 5px;
+   padding: 5px 15px;
+   transition: background-color 0.1s;
+   cursor: pointer;
+}
+
+.user-input__controls button:hover {
+   background-color: #663399e0;
+}

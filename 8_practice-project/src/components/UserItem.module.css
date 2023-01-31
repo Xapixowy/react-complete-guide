@@ -1,0 +1,16 @@
+.user-item {
+   color: #000;
+   border: 2px solid #ccc;
+   padding: 5px;
+   transition: border-color 0.1s, background-color 0.1s;
+   cursor: pointer;
+}
+
+.user-item:hover {
+   border-color: #cd5c5c;
+   background-color: #cd5c5c90;
+}
+
+.user-item__username {
+   font-weight: bold;
+}
