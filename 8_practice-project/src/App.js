@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import styles from './App.module.css';
 
-import UserInput from './components/UserInput';
-import UsersList from './components/UsersList';
+import UserInput from './components/Users/UserInput';
+import UsersList from './components/Users/UsersList';
 
 const DUMMY_DATA = [
    { id: 1, username: 'Szymon', age: 24 },
